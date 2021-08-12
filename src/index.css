@@ -1,10 +1,11 @@
-body {
-  margin: 0;
-  padding: 0%;
-}
-
 @import url("https://fonts.google.com/specimen/Libre+Baskerville#standard-styles");
-
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Libre Baskerville", serif;
   font-weight: 400;
