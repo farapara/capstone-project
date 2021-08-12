@@ -4,12 +4,13 @@ import { Switch, Route, NavLink } from "react-router-dom";
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <header>Awesome Header</header>
+      <main>Awesome Content</main>
       <Switch>
-        <Route path="/places">places</Route>
+        <Route path="/places"></Route>
       </Switch>
       <Switch>
-        <Route path="/profile">profile</Route>
+        <Route path="/profile"></Route>
       </Switch>
 
       <Switch>
@@ -17,6 +18,7 @@ function App() {
           HOME
         </Route>
       </Switch>
+      <footer>Awesome Footer</footer>
     </div>
   );
 }
