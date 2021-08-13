@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, NavLink } from "react-router-dom";
+import { Route, NavLink, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 import Places from "./components/Places";
 import Map from "./components/Map";
