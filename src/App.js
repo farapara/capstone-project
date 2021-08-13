@@ -1,22 +1,31 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Route, NavLink } from "react-router-dom";
+import Profile from "./components/Profile";
+import Places from "./components/Places";
+import Map from "./components/Map";
 
 function App() {
   return (
     <div className="App">
-      <header class="header">Awesome Header</header>
-      <main>Awesome Content</main>
-      <Switch>
-        <Route path="/places"></Route>
-      </Switch>
-      <Switch>
-        <Route path="/profile"></Route>
-      </Switch>
-
-      <Switch>
-        <Route exact path="/"></Route>
-      </Switch>
-      <footer>Awesome Footer</footer>
+      <header className="header">
+        <Route path="/map">
+          <Map />
+        </Route>
+        <Route path="/places">
+          <Places />
+        </Route>
+        <Route path="/profile">
+          <Profile />
+        </Route>
+      </header>
+      <main className="main">Main</main>
+      <footer className="footer">
+        <nav className="nav">
+          <NavLink to="/profile">Profile</NavLink>
+          <NavLink to="/places">Places</NavLink>
+          <NavLink to="/map">Map</NavLink>
+        </nav>
+      </footer>
     </div>
   );
 }
