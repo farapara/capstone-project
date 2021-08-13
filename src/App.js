@@ -1,6 +1,7 @@
 import "./App.css";
-import { NavLink } from "react-router-dom";
+
 import Header from "./components/Header";
+import Navigation from "./components/Navigation";
 
 function App() {
   return (
@@ -8,17 +9,7 @@ function App() {
       <Header />
       <main className="Main"></main>
       <footer className="Footer">
-        <nav className="Nav">
-          <NavLink className="Navlink" to="/profile">
-            profile
-          </NavLink>
-          <NavLink className="Navlink" to="/places">
-            places
-          </NavLink>
-          <NavLink className="Navlink" to="/map">
-            map
-          </NavLink>
-        </nav>
+        <Navigation />
       </footer>
     </div>
   );
