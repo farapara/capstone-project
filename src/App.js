@@ -8,22 +8,30 @@ function App() {
   return (
     <div className="App">
       <header className="header">
-        <Route path="/map">
-          <Map />
-        </Route>
-        <Route path="/places">
-          <Places />
-        </Route>
-        <Route path="/profile">
-          <Profile />
-        </Route>
+        <Switch>
+          <Route path="/map">
+            <Map />
+          </Route>
+          <Route path="/places">
+            <Places />
+          </Route>
+          <Route path="/profile">
+            <Profile />
+          </Route>
+        </Switch>
       </header>
-      <main className="main">Main</main>
+      <main className="main"></main>
       <footer className="footer">
         <nav className="nav">
-          <NavLink to="/profile">Profile</NavLink>
-          <NavLink to="/places">Places</NavLink>
-          <NavLink to="/map">Map</NavLink>
+          <NavLink className="navlink" to="/profile">
+            profile
+          </NavLink>
+          <NavLink className="navlink" to="/places">
+            places
+          </NavLink>
+          <NavLink className="navlink" to="/map">
+            map
+          </NavLink>
         </nav>
       </footer>
     </div>

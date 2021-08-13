@@ -1,3 +1,3 @@
 export default function Places() {
-  return <h2>Places</h2>;
+  return <h2>places</h2>;
 }

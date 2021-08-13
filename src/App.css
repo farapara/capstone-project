@@ -1,4 +1,41 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 .App {
-  display: grid;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  position: absolute;
+  padding: 30px;
+  width: 100%;
+  background-color: #e8abb9;
+  color: #ffffff;
+}
+.main {
   height: 100vh;
+  padding: 160px;
+  overflow-y: scroll;
+}
+.footer {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  padding: 20px;
+  background-color: #e8abb9;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.navlink {
+  text-decoration: none;
+  color: #ffffff;
 }
