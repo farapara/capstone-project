@@ -1,22 +1,25 @@
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <header class="header">Awesome Header</header>
-      <main>Awesome Content</main>
-      <Switch>
-        <Route path="/places"></Route>
-      </Switch>
-      <Switch>
-        <Route path="/profile"></Route>
-      </Switch>
-
-      <Switch>
-        <Route exact path="/"></Route>
-      </Switch>
-      <footer>Awesome Footer</footer>
+      <Header />
+      <main className="Main"></main>
+      <footer className="Footer">
+        <nav className="Nav">
+          <NavLink className="Navlink" to="/profile">
+            profile
+          </NavLink>
+          <NavLink className="Navlink" to="/places">
+            places
+          </NavLink>
+          <NavLink className="Navlink" to="/map">
+            map
+          </NavLink>
+        </nav>
+      </footer>
     </div>
   );
 }

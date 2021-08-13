@@ -1,4 +1,33 @@
+@import url("https://fonts.google.com/specimen/Libre+Baskerville#standard-styles");
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Libre Baskerville", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .App {
-  display: grid;
   height: 100vh;
+  display: grid;
+  grid-template-rows: 10vh auto 6vh;
+}
+
+.Main {
+  overflow-y: scroll;
+}
+.Footer {
+  background-color: #e8abb9;
+}
+.Nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Navlink {
+  text-decoration: none;
+  color: #ffffff;
 }
