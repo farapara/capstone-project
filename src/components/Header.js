@@ -14,6 +14,7 @@ export default function Header() {
         <Route path="/profile">
           <h2>here's where you can create a profile</h2>
         </Route>
+        <Route exact path="/"></Route>
       </Switch>
     </section>
   );
