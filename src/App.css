@@ -10,19 +10,13 @@
   display: flex;
   flex-direction: column;
 }
-.header {
-  position: absolute;
-  padding: 30px;
-  width: 100%;
-  background-color: #e8abb9;
-  color: #ffffff;
-}
-.main {
+
+.Main {
   height: 100vh;
   padding: 160px;
   overflow-y: scroll;
 }
-.footer {
+.Footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -30,12 +24,12 @@
   background-color: #e8abb9;
 }
 
-.nav {
+.Nav {
   display: flex;
   justify-content: space-around;
 }
 
-.navlink {
+.Navlink {
   text-decoration: none;
   color: #ffffff;
 }
