@@ -6,15 +6,14 @@ export default function Header() {
     <section className="Header">
       <Switch>
         <Route path="/map">
-          <h2>here's where you can see them on the map</h2>
+          <h2>map</h2>
         </Route>
         <Route path="/places">
-          <h2>here's where you can add you pictures</h2>
+          <h2>places</h2>
         </Route>
         <Route path="/profile">
-          <h2>here's where you can create a profile</h2>
+          <h2>profile</h2>
         </Route>
-        <Route exact path="/"></Route>
       </Switch>
     </section>
   );
