@@ -18,4 +18,5 @@
 
 .Main {
   overflow-y: scroll;
+  margin: 1.25rem;
 }
