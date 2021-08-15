@@ -1,0 +1,14 @@
+.Nav {
+  background-color: #e8abb9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.Navlink {
+  color: #cc8696;
+  font-size: 1.8rem;
+}
+
+.Navlink--active {
+  color: #ffffff;
+}
