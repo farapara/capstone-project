@@ -6,13 +6,13 @@ export default function Header() {
     <section className="Header">
       <Switch>
         <Route path="/map">
-          <h2>map</h2>
+          <h1>map</h1>
         </Route>
         <Route path="/places">
-          <h2>places</h2>
+          <h1>places</h1>
         </Route>
         <Route path="/profile">
-          <h2>profile</h2>
+          <h1>profile</h1>
         </Route>
       </Switch>
     </section>

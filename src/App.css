@@ -13,21 +13,10 @@
 .App {
   height: 100vh;
   display: grid;
-  grid-template-rows: 10vh auto 6vh;
+  grid-template-rows: 10vh auto 8vh;
 }
 
 .Main {
   overflow-y: scroll;
-}
-.Footer {
-  background-color: #e8abb9;
-}
-.Nav {
-  display: flex;
-  justify-content: space-around;
-}
-
-.Navlink {
-  text-decoration: none;
-  color: #ffffff;
+  margin: 1.25rem;
 }
