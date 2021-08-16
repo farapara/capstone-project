@@ -33,8 +33,8 @@ export default function ProfileForm() {
         />
         <div value="">200</div>
 
-        <label className="Upload" for="upload"></label>
-        <input class name="userPicture" id="userPicture" type="file" required />
+        <label className="Upload" htmlFor="upload"></label>
+        <input name="userPicture" id="userPicture" type="file" required />
 
         <div className="FormButtons">
           <button className="Submit">save</button>
