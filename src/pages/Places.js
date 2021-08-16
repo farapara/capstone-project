@@ -1,3 +1,3 @@
-export default function Pleces() {
-  return;
+export default function Places() {
+  return <p>hello there</p>;
 }

@@ -15,3 +15,7 @@
   display: grid;
   grid-template-rows: 10vh auto 8vh;
 }
+.Main {
+  overflow-y: scroll;
+  margin: 1.25rem;
+}

@@ -1,1 +1,18 @@
+.Form-Wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+.FormButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 
+.Upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #cc8696;
+  text-align: center;
+}
