@@ -1,3 +1,10 @@
+.Heading {
+  color: #e8abb9;
+  margin: 2em;
+  font-size: medium;
+  align-items: center;
+  letter-spacing: 4px;
+}
 .Form-Wrapper {
   display: flex;
   flex-direction: column;
