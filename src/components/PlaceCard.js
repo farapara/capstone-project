@@ -5,7 +5,7 @@ export default function PlaceCard() {
   return (
     <li className="PlaceCard">
       <img src="" alt="" />
-      <p className="PlaceCardItem">card</p>
+      <p className="PlaceCardItem"></p>
     </li>
   );
 }
