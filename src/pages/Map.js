@@ -1,5 +1,10 @@
 import "./Map.css";
+import ReactMapGl from "react-map-gl";
 
 export default function Map() {
-  return <div>my maaap</div>;
+  return (
+    <div>
+      <ReactMapGl>pins here</ReactMapGl>
+    </div>
+  );
 }
