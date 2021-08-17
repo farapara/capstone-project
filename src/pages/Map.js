@@ -1,3 +1,5 @@
+import "./Map.css";
+
 export default function Map() {
-  return <p>where is the map?</p>;
+  return <div>my maaap</div>;
 }
