@@ -16,6 +16,11 @@
   grid-template-rows: 10vh auto 8vh;
 }
 .Main {
+  display: flex;
+  flex-direction: column;
   overflow-y: scroll;
-  margin: 1.25rem;
+
+  padding: 2em;
+  text-align: center;
+  background-color: white;
 }
