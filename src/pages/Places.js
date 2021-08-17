@@ -1,3 +1,11 @@
+import PlaceCard from "../components/PlaceCard";
+
 export default function Places() {
-  return <p>hello there</p>;
+  return (
+    <ul>
+      <PlaceCard />
+      <PlaceCard />
+      <PlaceCard />
+    </ul>
+  );
 }
