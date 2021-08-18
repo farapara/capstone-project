@@ -2,9 +2,9 @@ import "./AddProfileForm.css";
 
 export default function AddProfileForm() {
   return (
-    <div className="Form-Wrapper">
+    <div className="AddProfileForm">
       <form className="ProfileForm">
-        <p>Name:</p>
+        <p className="ptag">Name:</p>
         <textarea
           name="userName"
           id="userName"
@@ -13,7 +13,7 @@ export default function AddProfileForm() {
           maxLength="10"
           required
         ></textarea>
-        <p>Bio:</p>
+        <p className="ptag">Bio:</p>
         <textarea
           name="userBio"
           id="userBio"
@@ -24,6 +24,7 @@ export default function AddProfileForm() {
         />
 
         <label className="Upload" htmlFor="upload"></label>
+
         <input name="userPicture" id="userPicture" type="file" required />
 
         <div className="FormButtons">
