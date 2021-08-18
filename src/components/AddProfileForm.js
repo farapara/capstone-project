@@ -28,9 +28,7 @@ export default function AddProfileForm() {
         <input name="userPicture" id="userPicture" type="file" required />
 
         <div className="FormButtons">
-          <button onClick className="Submit">
-            save
-          </button>
+          <button className="Submit">save</button>
           <button className="Cancel">cancel</button>
         </div>
       </form>

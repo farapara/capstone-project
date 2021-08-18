@@ -1,6 +1,7 @@
 import "./Map.css";
 import ReactMapGl from "react-map-gl";
 import { useState } from "react";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -11,7 +12,7 @@ export default function Map() {
     zoom: 10,
   });
   return (
-    <div>
+    <div className="Map">
       <ReactMapGl
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
