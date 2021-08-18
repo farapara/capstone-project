@@ -2,7 +2,7 @@ import "./AddProfileForm.css";
 
 export default function AddProfileForm() {
   return (
-    <div className="Form-Wrapper">
+    <div className="AddProfileForm">
       <form className="ProfileForm">
         <p className="ptag">Name:</p>
         <textarea
