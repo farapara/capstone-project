@@ -21,8 +21,11 @@ function App() {
           <Route path="/map">
             <Map />
           </Route>
-          <Route path="/">
+          <Route exact path="/">
             <Redirect to="/profile" />
+          </Route>
+          <Route path="*">
+            <p>Page Not Found</p>
           </Route>
         </Switch>
       </main>
