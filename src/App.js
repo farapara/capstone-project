@@ -1,10 +1,10 @@
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Homepage from ".//pages/Homepage";
-import Profile from ".//pages/Profile";
-import Add from ".//pages/Add";
-import Map from ".//pages/Map";
+import Homepage from "./pages/Homepage";
+import Profile from "./pages/Profile";
+import Add from "./pages/Add";
+import Map from "./pages/Map";
 import { Switch, Route } from "react-router";
 
 function App() {
