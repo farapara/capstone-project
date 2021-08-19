@@ -9,7 +9,7 @@ export default function Map() {
     longitude: 11.576124,
     height: "100vh",
     width: "100vw",
-    zoom: 11,
+    zoom: 4,
   });
   return (
     <div className="Map">

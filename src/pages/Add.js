@@ -1,5 +1,4 @@
 import AddForm from "../components/AddForm";
-import "./Add.css";
 
 export default function Add() {
   return (
