@@ -10,23 +10,6 @@
   align-items: center;
 }
 
-.Upload {
-  display: flex;
-  flex-direction: column;
-  padding-top: 15px;
-  color: #cc8696;
-  margin-top: 20px;
-}
-
-.Submit {
-  height: 30px;
-  width: 45px;
-  border-radius: 10px;
-  transition: 1s ease-in-out;
-  background-color: lightgrey;
-  color: whitesmoke;
-}
-
 #location {
   font-size: medium;
   width: 300px;

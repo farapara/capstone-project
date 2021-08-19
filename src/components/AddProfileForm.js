@@ -1,9 +1,41 @@
 import "./AddProfileForm.css";
+import { useEffect, useState } from "react";
+import { uuid } from "uuidv4";
 
 export default function AddProfileForm() {
+  const createdProfile =
+    JSON.parse(localStorage.getItem("profileResult")) || [];
+  const [newProfile, setNewProfile] = useState(createdProfile);
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const userName = form.userName.value;
+    const userBio = form.userBio.value;
+    const userPicture = form.userPicture.value;
+    const id = uuid;
+
+    const newProfileInput = {
+      id,
+      userName,
+      userBio,
+      userPicture,
+    };
+
+    setNewProfile([...newProfile, newProfileInput]);
+
+    form.reset();
+  }
+
+  useEffect(() => {
+    localStorage.setItem("profileResult", JSON.stringify(newProfile));
+  }, [newProfile]);
+
   return (
     <div className="AddProfileForm">
-      <form className="ProfileForm">
+      <form className="ProfileForm" onSubmit={handleSubmit}>
         <p className="Ptag">Name:</p>
         <input
           name="userName"
@@ -23,11 +55,17 @@ export default function AddProfileForm() {
           required
         />
         <label className="Upload" htmlFor="upload"></label>
-        <input name="userPicture" id="userPicture" type="file" required />
-        <div className="FormButtons">
-          <button className="Submit">save</button>
-          <button className="Cancel">cancel</button>
-        </div>
+        <input
+          name="userPicture"
+          id="userPicture"
+          type="file"
+          accept="image/png, image/jpeg"
+          required
+        />
+
+        <button type="submit" className="Submit">
+          save
+        </button>
       </form>
     </div>
   );

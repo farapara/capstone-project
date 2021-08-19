@@ -33,7 +33,13 @@ export default function AddForm() {
           required
         />
         <label className="Upload" htmlFor="upload"></label>
-        <input name="picture" id="picture" type="file" required />
+        <input
+          name="picture"
+          id="picture"
+          type="file"
+          required
+          accept="image/png, image/jpeg"
+        />
 
         <button className="Submit">save</button>
       </form>
