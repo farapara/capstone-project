@@ -1,0 +1,25 @@
+.AddForm {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.FormTextfields {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.FormButton {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.AddButton {
+  height: 50px;
+  width: 70px;
+  border-radius: 10px;
+  text-align: center;
+  transition: ease-in-out;
+}

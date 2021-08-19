@@ -7,7 +7,12 @@ import { CgProfile } from "react-icons/cg";
 export default function Footer() {
   return (
     <nav className="Nav">
-      <NavLink className="Navlink" to="/" activeClassName="Navlink--active">
+      <NavLink
+        className="Navlink"
+        exact
+        to="/"
+        activeClassName="Navlink--active"
+      >
         <BiHomeAlt />
       </NavLink>
       <NavLink

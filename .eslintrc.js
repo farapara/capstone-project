@@ -19,6 +19,7 @@ module.exports = {
   plugins: ["react", "import", "react-hooks"],
   ignorePatterns: ["node_modules/"],
   rules: {
+    "react/prop-types": "off",
     // suppress errors for missing 'import React' in files
     "react/react-in-jsx-scope": "off",
     // allow jsx syntax in js files (for next.js project)
