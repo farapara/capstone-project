@@ -1,7 +1,8 @@
 import "./Map.css";
-import ReactMapGl from "react-map-gl";
+import ReactMapGl, { Marker } from "react-map-gl";
 import { useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
+import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
@@ -20,7 +21,18 @@ export default function Map() {
         onViewportChange={(viewport) => {
           setViewport(viewport);
         }}
-      ></ReactMapGl>
+      >
+        <Marker
+          latitude={37.970833}
+          longitude={23.72611}
+          offsetLeft={-20}
+          offsetTop={-10}
+        >
+          <FaMapMarkerAlt
+            style={{ fontSize: viewport.zoom * 7, color: "#e8abb9" }}
+          />
+        </Marker>
+      </ReactMapGl>
     </div>
   );
 }

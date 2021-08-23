@@ -1,23 +1,56 @@
 import "./AddForm.css";
+import uuid from "react-uuid";
 
 export default function AddForm() {
+  function handleSubmitMemory(event) {
+    event.preventDefault();
+    const form = event.target;
+
+    const pinLocation = form.pinLocation.value;
+    const pinDate = form.pinDate.value;
+    const pinRating = form.pinRating.value;
+    const pinNotes = form.pinNotes.value;
+    const pinPicture = form.pinPicture.value;
+    const id = uuid();
+
+    const newMemoryInput = {
+      id,
+      pinLocation,
+      pinDate,
+      pinRating,
+      pinNotes,
+      pinPicture,
+    };
+
+    localStorage.setItem("newMemoryInput", JSON.stringify(newMemoryInput));
+    form.reset();
+  }
+
   return (
     <div className="AddForm">
-      <form className="Form">
+      <form className="Form" onSubmit={handleSubmitMemory}>
         <p className="Ptag">Where?</p>
         <input
-          name="location"
-          id="location"
+          className="pinLocation"
+          name="pinLocation"
+          id="pinLocation"
           type="text"
           placeholder="enter a location"
           required
         />
         <p className="Ptag">When?</p>
-        <input name="date" id="date" type="date" required />
+        <input
+          className="pinDate"
+          name="pinDate"
+          id="pinDate"
+          type="date"
+          required
+        />
         <p className="Ptag">Rating:</p>
         <input
-          name="rating"
-          id="rating"
+          className="pinRating"
+          name="pinRating"
+          id="pinRating"
           type="number"
           min="0"
           max="5"
@@ -25,17 +58,26 @@ export default function AddForm() {
         />
         <p className="Ptag">Notes</p>
         <textarea
-          name="notes"
-          id="notes"
+          className="pinNotes"
+          name="pinNotes"
+          id="pinNotes"
           type="text"
           placeholder="add notes here..."
           maxlenght="200"
           required
         />
         <label className="Upload" htmlFor="upload"></label>
-        <input name="picture" id="picture" type="file" required />
+        <input
+          className="pinPicture"
+          name="pinPicture"
+          id="pinPicture"
+          type="file"
+          accept="image/png, image/jpeg"
+        />
 
-        <button className="Submit">save</button>
+        <button type="submit" className="Submit">
+          save
+        </button>
       </form>
     </div>
   );

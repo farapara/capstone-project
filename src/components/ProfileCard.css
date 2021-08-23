@@ -1,0 +1,38 @@
+.ProfileCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1em;
+  margin: 1em;
+}
+
+.ProfilePictureWrapper {
+  background-color: whitesmoke;
+}
+
+.ProfileHeading {
+  display: flex;
+  background-color: whitesmoke;
+  padding: 25px;
+  color: thistle;
+  border-radius: 15px;
+  letter-spacing: 4px;
+}
+
+.ProfileCardInput {
+  display: flex;
+
+  margin-top: 2em;
+  background-color: thistle;
+  padding: 25px;
+  color: white;
+  border-radius: 40px;
+}
+
+h4 {
+  display: flex;
+  align-items: right;
+  letter-spacing: 6px;
+  color: lightgrey;
+  margin-top: 3rem;
+}

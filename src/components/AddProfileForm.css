@@ -10,12 +10,6 @@
   align-items: center;
 }
 
-.FormButtons {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
 .Upload {
   display: flex;
   flex-direction: column;
@@ -28,28 +22,24 @@
   height: 30px;
   width: 45px;
   border-radius: 10px;
-  text-align: center;
-  transition: 1s ease-in-out;
+  border: none;
+  align-self: center;
   background-color: lightgrey;
   color: whitesmoke;
+  font-size: 1em;
 }
 
-.Cancel {
-  height: 30px;
-  width: 45px;
-  border-radius: 10px;
-  text-align: center;
-  transition: 1s;
-  background-color: lightgrey;
-  color: whitesmoke;
+.Submit:hover {
+  background-color: #cc8696;
 }
-#userName {
+
+.userName {
   font-size: medium;
   width: 300px;
   padding: 10px;
 }
 
-#userBio {
+.userBio {
   font-size: medium;
   height: 200px;
   width: 300px;
@@ -58,6 +48,7 @@
 }
 
 .Ptag {
+  color: #cc8696;
   letter-spacing: 4px;
   padding-top: 20px;
   padding-bottom: 20px;
