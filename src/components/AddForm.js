@@ -1,23 +1,58 @@
 import "./AddForm.css";
+import { useEffect, useState } from "react";
+import { uuid } from "uuidv4";
 
 export default function AddForm() {
+  const createdMemory = JSON.parse(localStorage.getItem("memoriesList")) || [];
+  const [newMemory, setNewMemory] = useState(createdMemory);
+
+  function handleSubmitMemory(event) {
+    event.preventDefault();
+    const form = event.target;
+    console.log(form);
+
+    const pinLocation = form.pinLocation.value;
+    const pinDate = form.pinDate.value;
+    const pinRating = form.pinRating.value;
+    const pinNotes = form.pinNotes.value;
+    const pinPicture = form.pinPicture.value;
+    const id = uuid;
+
+    const newMemoryInput = {
+      id,
+      pinLocation,
+      pinDate,
+      pinRating,
+      pinNotes,
+      pinPicture,
+    };
+
+    setNewMemory([...newMemory, newMemoryInput]);
+
+    form.reset();
+  }
+
+  useEffect(() => {
+    localStorage.setItem("memoriesList", JSON.stringify(newMemory));
+  }, [newMemory]);
+
   return (
     <div className="AddForm">
-      <form className="Form">
+      <form className="Form" onSubmit={handleSubmitMemory}>
         <p className="Ptag">Where?</p>
         <input
-          name="location"
-          id="location"
+          name="pinLocation"
+          id="pinLocation"
           type="text"
           placeholder="enter a location"
           required
         />
         <p className="Ptag">When?</p>
-        <input name="date" id="date" type="date" required />
+        <input name="pinDate" id="pinDate" type="date" required />
         <p className="Ptag">Rating:</p>
         <input
-          name="rating"
-          id="rating"
+          name="pinRating"
+          id="pinRating"
           type="number"
           min="0"
           max="5"
@@ -25,8 +60,8 @@ export default function AddForm() {
         />
         <p className="Ptag">Notes</p>
         <textarea
-          name="notes"
-          id="notes"
+          name="pinNotes"
+          id="pinNotes"
           type="text"
           placeholder="add notes here..."
           maxlenght="200"
@@ -34,14 +69,16 @@ export default function AddForm() {
         />
         <label className="Upload" htmlFor="upload"></label>
         <input
-          name="picture"
-          id="picture"
+          name="pinPicture"
+          id="pinPicture"
           type="file"
           required
           accept="image/png, image/jpeg"
         />
 
-        <button className="Submit">save</button>
+        <button type="submit" className="Submit">
+          save
+        </button>
       </form>
     </div>
   );

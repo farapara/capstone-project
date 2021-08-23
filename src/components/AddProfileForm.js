@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import { uuid } from "uuidv4";
 
 export default function AddProfileForm() {
-  const createdProfile =
+  const createdProfiles =
     JSON.parse(localStorage.getItem("profileResult")) || [];
-  const [newProfile, setNewProfile] = useState(createdProfile);
+  const [newProfile, setNewProfile] = useState(createdProfiles);
 
   function handleSubmit(event) {
     event.preventDefault();

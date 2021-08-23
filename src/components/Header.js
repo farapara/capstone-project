@@ -6,9 +6,8 @@ export default function Header() {
     <section className="Header">
       <Switch>
         <Route exact path="/">
-          <h1>homepage</h1>
+          <h1>Going Places App</h1>
         </Route>
-
         <Route path="/profile">
           <h1>profile</h1>
         </Route>

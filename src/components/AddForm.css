@@ -10,26 +10,26 @@
   align-items: center;
 }
 
-#location {
+#pinLocation {
   font-size: medium;
   width: 300px;
   padding: 10px;
 }
 
-#date {
+#pinDate {
   font-size: medium;
   width: 300px;
   padding: 10px;
 }
 
-#rating {
+#pinRating {
   font-size: medium;
 
   width: 300px;
   padding: 10px;
 }
 
-#notes {
+#pinNotes {
   font-size: medium;
   height: 200px;
   width: 300px;

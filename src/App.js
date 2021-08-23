@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Homepage from "./pages/Homepage";
+import CreateProfile from "./pages/CreateProfile";
 import Profile from "./pages/Profile";
 import Add from "./pages/Add";
 import Map from "./pages/Map";
@@ -13,7 +13,7 @@ function App() {
       <Header />
       <main className="Main">
         <Switch>
-          <Route path="/profile">
+          <Route exact path="/profile">
             <Profile />
           </Route>
           <Route path="/map">
@@ -22,8 +22,11 @@ function App() {
           <Route path="/add">
             <Add />
           </Route>
-          <Route exact path="/">
-            <Homepage />
+          <Route path="/create">
+            <CreateProfile />
+          </Route>
+          <Route path="/">
+            <CreateProfile />
           </Route>
           <Route path="*">
             <p>Page Not Found</p>
