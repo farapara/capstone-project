@@ -1,11 +1,7 @@
 import "./AddForm.css";
-import { useEffect, useState } from "react";
-import { uuid } from "uuidv4";
+import uuid from "react-uuid";
 
 export default function AddForm() {
-  const createdMemory = JSON.parse(localStorage.getItem("memoriesList")) || [];
-  const [newMemory, setNewMemory] = useState(createdMemory);
-
   function handleSubmitMemory(event) {
     event.preventDefault();
     const form = event.target;
@@ -15,7 +11,7 @@ export default function AddForm() {
     const pinRating = form.pinRating.value;
     const pinNotes = form.pinNotes.value;
     const pinPicture = form.pinPicture.value;
-    const id = uuid;
+    const id = uuid();
 
     const newMemoryInput = {
       id,
@@ -26,14 +22,9 @@ export default function AddForm() {
       pinPicture,
     };
 
-    setNewMemory([...newMemory, newMemoryInput]);
-
+    localStorage.setItem("newMemoryInput", JSON.stringify(newMemoryInput));
     form.reset();
   }
-
-  useEffect(() => {
-    localStorage.setItem("memoriesList", JSON.stringify(newMemory));
-  }, [newMemory]);
 
   return (
     <div className="AddForm">
@@ -81,7 +72,6 @@ export default function AddForm() {
           name="pinPicture"
           id="pinPicture"
           type="file"
-          required
           accept="image/png, image/jpeg"
         />
 

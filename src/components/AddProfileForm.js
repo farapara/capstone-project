@@ -1,21 +1,15 @@
 import "./AddProfileForm.css";
-import { useEffect, useState } from "react";
-import { uuid } from "uuidv4";
+import uuid from "react-uuid";
 
 export default function AddProfileForm() {
-  const createdProfiles =
-    JSON.parse(localStorage.getItem("profileResult")) || [];
-  const [newProfile, setNewProfile] = useState(createdProfiles);
-
   function handleSubmit(event) {
     event.preventDefault();
 
     const form = event.target;
-
     const userName = form.userName.value;
     const userBio = form.userBio.value;
     const userPicture = form.userPicture.value;
-    const id = uuid;
+    const id = uuid();
 
     const newProfileInput = {
       id,
@@ -24,14 +18,9 @@ export default function AddProfileForm() {
       userPicture,
     };
 
-    setNewProfile([...newProfile, newProfileInput]);
-
+    localStorage.setItem("newProfileInput", JSON.stringify(newProfileInput));
     form.reset();
   }
-
-  useEffect(() => {
-    localStorage.setItem("profileResult", JSON.stringify(newProfile));
-  }, [newProfile]);
 
   return (
     <div className="AddProfileForm">
@@ -63,7 +52,6 @@ export default function AddProfileForm() {
           id="userPicture"
           type="file"
           accept="image/png, image/jpeg"
-          required
         />
 
         <button type="submit" className="Submit">

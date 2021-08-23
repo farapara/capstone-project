@@ -1,38 +1,32 @@
 import "./ProfileCard.css";
+
 export default function ProfileCard() {
-  const createdProfiles =
-    JSON.parse(localStorage.getItem("profileResult")) || [];
+  const newProfileInput =
+    JSON.parse(localStorage.getItem("newProfileInput")) || [];
 
-  function renderProfiles() {
-    return createdProfiles.map((createdProfile) => {
-      const id = createdProfile.id;
-
-      function capitalizeName(str) {
-        return str.charAt(0).toUpperCase() + str.slice(1);
-      }
-      return (
-        <section key={id} className="CreatedProfile">
-          <div className="ProfilePictureWrapper">
-            <image
-              className="ProfilePicture"
-              src={createdProfile.userPicture}
-              alt=""
-            />
-          </div>
-          <h2 className="ProfileHeading">
-            Welcome {capitalizeName(createdProfile.userName)}{" "}
-          </h2>
-
-          <div className="ProfileCardInput">
-            <p>{createdProfile.userBio}</p>
-          </div>
-
-          <div>
-            <h4 className="Htag">start your journey!</h4>
-          </div>
-        </section>
-      );
-    });
+  function capitalizeName(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
-  return <div>{renderProfiles()}</div>;
+  return (
+    <section className="ProfileCard">
+      <div className="ProfilePictureWrapper">
+        <image
+          className="ProfilePicture"
+          src={newProfileInput.userPicture}
+          alt=""
+        />
+      </div>
+      <h2 className="ProfileHeading">
+        Welcome {capitalizeName(newProfileInput.userName)}{" "}
+      </h2>
+
+      <div className="ProfileCardInput">
+        <p>{newProfileInput.userBio}</p>
+      </div>
+
+      <div>
+        <h4>start your journey!</h4>
+      </div>
+    </section>
+  );
 }
