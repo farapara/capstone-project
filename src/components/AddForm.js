@@ -9,7 +9,6 @@ export default function AddForm() {
   function handleSubmitMemory(event) {
     event.preventDefault();
     const form = event.target;
-    console.log(form);
 
     const pinLocation = form.pinLocation.value;
     const pinDate = form.pinDate.value;
@@ -41,6 +40,7 @@ export default function AddForm() {
       <form className="Form" onSubmit={handleSubmitMemory}>
         <p className="Ptag">Where?</p>
         <input
+          className="pinLocation"
           name="pinLocation"
           id="pinLocation"
           type="text"
@@ -48,9 +48,16 @@ export default function AddForm() {
           required
         />
         <p className="Ptag">When?</p>
-        <input name="pinDate" id="pinDate" type="date" required />
+        <input
+          className="pinDate"
+          name="pinDate"
+          id="pinDate"
+          type="date"
+          required
+        />
         <p className="Ptag">Rating:</p>
         <input
+          className="pinRating"
           name="pinRating"
           id="pinRating"
           type="number"
@@ -60,6 +67,7 @@ export default function AddForm() {
         />
         <p className="Ptag">Notes</p>
         <textarea
+          className="pinNotes"
           name="pinNotes"
           id="pinNotes"
           type="text"
@@ -69,6 +77,7 @@ export default function AddForm() {
         />
         <label className="Upload" htmlFor="upload"></label>
         <input
+          className="pinPicture"
           name="pinPicture"
           id="pinPicture"
           type="file"

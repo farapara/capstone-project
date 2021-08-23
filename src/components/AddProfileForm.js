@@ -38,6 +38,7 @@ export default function AddProfileForm() {
       <form className="ProfileForm" onSubmit={handleSubmit}>
         <p className="Ptag">Name:</p>
         <input
+          className="userName"
           name="userName"
           id="userName"
           type="text"
@@ -47,6 +48,7 @@ export default function AddProfileForm() {
         />
         <p className="Ptag">Bio:</p>
         <textarea
+          className="userBio"
           name="userBio"
           id="userBio"
           type="text"
@@ -56,6 +58,7 @@ export default function AddProfileForm() {
         />
         <label className="Upload" htmlFor="upload"></label>
         <input
+          className="userPicture"
           name="userPicture"
           id="userPicture"
           type="file"

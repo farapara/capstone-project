@@ -33,13 +33,13 @@
   background-color: #cc8696;
 }
 
-#userName {
+.userName {
   font-size: medium;
   width: 300px;
   padding: 10px;
 }
 
-#userBio {
+.userBio {
   font-size: medium;
   height: 200px;
   width: 300px;
