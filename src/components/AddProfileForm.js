@@ -52,6 +52,7 @@ export default function AddProfileForm() {
           id="userPicture"
           type="file"
           accept="image/png, image/jpeg"
+          required
         />
 
         <button type="submit" className="Submit">
