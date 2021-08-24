@@ -7,26 +7,29 @@ export default function ProfileCard() {
   function capitalizeName(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
-  return (
-    <section className="ProfileCard">
-      <div className="ProfilePictureWrapper">
-        <image
-          className="ProfilePicture"
-          src={newProfileInput.userPicture}
-          alt=""
-        />
-      </div>
-      <h2 className="ProfileHeading">
-        Welcome {capitalizeName(newProfileInput.userName)}{" "}
-      </h2>
+  function renderProfile() {
+    return (
+      <section className="ProfileCard">
+        <div className="ProfilePictureWrapper">
+          <image
+            className="ProfilePicture"
+            src={newProfileInput.userPicture}
+            alt=""
+          />
+        </div>
+        <h2 className="ProfileHeading">
+          Welcome {capitalizeName(newProfileInput.userName)}{" "}
+        </h2>
 
-      <div className="ProfileCardInput">
-        <p>{newProfileInput.userBio}</p>
-      </div>
+        <div className="ProfileCardInput">
+          <p>{newProfileInput.userBio}</p>
+        </div>
 
-      <div>
-        <h4>start your journey!</h4>
-      </div>
-    </section>
-  );
+        <div>
+          <h4>start your journey!</h4>
+        </div>
+      </section>
+    );
+  }
+  return <div>{renderProfile()} </div>;
 }
