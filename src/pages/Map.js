@@ -1,17 +1,32 @@
 import "./Map.css";
-import ReactMapGl, { Marker } from "react-map-gl";
+import ReactMapGl, {
+  Marker,
+  GeolocateControl,
+  NavigationControl,
+} from "react-map-gl";
 import { useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
-    longitude: 11.576124,
-    latitude: 48.137154,
+    latitude: 42.123,
+    longitude: 10.123,
     height: "100vh",
     width: "100vw",
     zoom: 4,
   });
+
+  const geolocateStyle = {
+    float: "left",
+    margin: "10px",
+    padding: "10px",
+  };
+
+  const navControlStyle = {
+    right: 10,
+    top: 10,
+  };
   return (
     <div className="Map">
       <ReactMapGl
@@ -32,6 +47,12 @@ export default function Map() {
             style={{ fontSize: viewport.zoom * 7, color: "#e8abb9" }}
           />
         </Marker>
+        <NavigationControl style={navControlStyle} />
+        <GeolocateControl
+          style={geolocateStyle}
+          positionOptions={{ enableHighAccuracy: true }}
+          trackUserLocation={true}
+        />
       </ReactMapGl>
     </div>
   );
