@@ -13,17 +13,24 @@ export default function AddForm() {
     const pinPicture = form.pinPicture.value;
     const id = uuid();
 
-    const newMemoryInput = {
-      id,
-      pinLocation,
-      pinDate,
-      pinRating,
-      pinNotes,
-      pinPicture,
-    };
+    const mapboxGeoCodingURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${pinLocation}.json?access_token=${process.env.REACT_APP_MAPBOX_KEY}`;
 
-    localStorage.setItem("newMemoryInput", JSON.stringify(newMemoryInput));
-    form.reset();
+    fetch(mapboxGeoCodingURL)
+      .then((res) => res.json())
+      .then((mapboxData) => {
+        const newMemoryInput = {
+          id,
+          pinLocation,
+          pinDate,
+          pinRating,
+          pinNotes,
+          pinPicture,
+          coordinates: mapboxData.features[0].center,
+        };
+
+        localStorage.setItem("newMemoryInput", JSON.stringify(newMemoryInput));
+        form.reset();
+      });
   }
 
   return (
