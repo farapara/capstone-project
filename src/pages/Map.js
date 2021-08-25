@@ -6,8 +6,8 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Map() {
   const [viewport, setViewport] = useState({
-    latitude: 48.137154,
     longitude: 11.576124,
+    latitude: 48.137154,
     height: "100vh",
     width: "100vw",
     zoom: 4,
@@ -23,8 +23,8 @@ export default function Map() {
         }}
       >
         <Marker
-          latitude={37.970833}
           longitude={23.72611}
+          latitude={37.970833}
           offsetLeft={-20}
           offsetTop={-10}
         >
