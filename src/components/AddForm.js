@@ -4,6 +4,7 @@ import uuid from "react-uuid";
 export default function AddForm() {
   function handleSubmitMemory(event) {
     event.preventDefault();
+
     const form = event.target;
 
     const pinLocation = form.pinLocation.value;
@@ -12,6 +13,9 @@ export default function AddForm() {
     const pinNotes = form.pinNotes.value;
     const pinPicture = form.pinPicture.value;
     const id = uuid();
+
+    const storedMemories =
+      JSON.parse(localStorage.getItem("storedMemories")) || [];
 
     const mapboxGeoCodingURL = `https://api.mapbox.com/geocoding/v5/mapbox.places/${pinLocation}.json?access_token=${process.env.REACT_APP_MAPBOX_KEY}`;
 
@@ -27,8 +31,9 @@ export default function AddForm() {
           pinPicture,
           coordinates: mapboxData.features[0].center,
         };
+        const newMemory = [...storedMemories, newMemoryInput];
 
-        localStorage.setItem("newMemoryInput", JSON.stringify(newMemoryInput));
+        localStorage.setItem("storedMemories", JSON.stringify(newMemory));
         form.reset();
       });
   }
