@@ -1,0 +1,3 @@
+GET https://api.mapbox.com/geocoding/v5/mapbox.places/Hamburg.json?access_token=pk.eyJ1IjoiZmFyYXBhcmEiLCJhIjoiY2tzZnhobnYzMWJ5bTJ4bzRuZG85c3l2ciJ9.s1Xl-K5Q2rfsOkSYqVYAZQ HTTP/1.1
+
+ 
