@@ -1,6 +1,6 @@
 .PinCard {
   width: 250px;
-  height: 250px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

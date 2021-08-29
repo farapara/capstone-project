@@ -1,0 +1,22 @@
+{
+  "pins": [
+    {
+      "id": 1,
+      "location": "Eiffel Tower",
+      "date": "14/02/2018",
+      "rating": 5,
+      "notes": "It was an amazing place to be",
+      "lat": 48.858093,
+      "long": 2.294694
+    },
+    {
+      "id": 2,
+      "location": "Berlin",
+      "date": "04/10/2019",
+      "rating": 5,
+      "notes": "Awesome city, cool to be there",
+      "lat": 52.321912,
+      "long": 13.57031
+    }
+  ]
+}
