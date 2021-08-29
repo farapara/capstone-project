@@ -19,3 +19,9 @@
   align-items: right;
   font-size: 14px;
 }
+
+.PinStar {
+  display: flex;
+  align-items: right;
+  color: gold;
+}

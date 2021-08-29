@@ -8,6 +8,7 @@ import ReactMapGl, {
 import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 export default function Map() {
   const [pins, setPins] = useState({ pins: [] });
@@ -66,7 +67,11 @@ export default function Map() {
               offsetTop={-10}
             >
               <FaMapMarkerAlt
-                style={{ fontSize: viewport.zoom * 7, color: "#e8abb9" }}
+                style={{
+                  fontSize: viewport.zoom * 7,
+                  color: "#e8abb9",
+                  cursor: "pointer",
+                }}
                 onClick={() => handleMarkerClick(p.id)}
               />
             </Marker>
@@ -85,7 +90,13 @@ export default function Map() {
                   <label className="PinCardLabel">Date</label>
                   <p className="PinCardDesc">{p.date}</p>
                   <label className="PinCardLabel">Rating</label>
-                  <div className="PinCardDesc">{p.rating}</div>
+                  <div className="PinStar">
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                    <AiFillStar />
+                  </div>
                   <label className="PinCardLabel">Notes</label>
                   <p className="PinCardDesc">{p.notes}</p>
                 </div>
