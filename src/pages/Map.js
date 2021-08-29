@@ -11,6 +11,7 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Map() {
   const [pins, setPins] = useState({ pins: [] });
+  const [currentPlaceId, setCurrentPlaceId] = useState();
   const [viewport, setViewport] = useState({
     latitude: 42.123,
     longitude: 10.123,
@@ -42,6 +43,10 @@ export default function Map() {
       });
   }, []);
 
+  const handleMarkerClick = (id) => {
+    setCurrentPlaceId(id);
+  };
+
   return (
     <div className="Map">
       <ReactMapGl
@@ -62,26 +67,30 @@ export default function Map() {
             >
               <FaMapMarkerAlt
                 style={{ fontSize: viewport.zoom * 7, color: "#e8abb9" }}
+                onClick={() => handleMarkerClick(p.id)}
               />
             </Marker>
-            <Popup
-              longitude={p.long}
-              latitude={p.lat}
-              closeButton={true}
-              closeOnClick={false}
-              anchor="left"
-            >
-              <div className="PinCard">
-                <label className="PinCardLabel">Location</label>
-                <p className="PinCardDesc">{p.location}</p>
-                <label className="PinCardLabel">Date</label>
-                <p className="PinCardDesc">{p.date}</p>
-                <label className="PinCardLabel">Rating</label>
-                <div className="PinCardDesc">{p.rating}</div>
-                <label className="PinCardLabel">Notes</label>
-                <p className="PinCardDesc">{p.notes}</p>
-              </div>
-            </Popup>
+            {p.id === currentPlaceId && (
+              <Popup
+                longitude={p.long}
+                latitude={p.lat}
+                closeButton={true}
+                closeOnClick={false}
+                anchor="left"
+                onClose={() => setCurrentPlaceId()}
+              >
+                <div className="PinCard">
+                  <label className="PinCardLabel">Location</label>
+                  <p className="PinCardDesc">{p.location}</p>
+                  <label className="PinCardLabel">Date</label>
+                  <p className="PinCardDesc">{p.date}</p>
+                  <label className="PinCardLabel">Rating</label>
+                  <div className="PinCardDesc">{p.rating}</div>
+                  <label className="PinCardLabel">Notes</label>
+                  <p className="PinCardDesc">{p.notes}</p>
+                </div>
+              </Popup>
+            )}
           </>
         ))}
         <NavigationControl style={navControlStyle} />
