@@ -25,3 +25,46 @@
   align-items: right;
   color: gold;
 }
+.Form {
+  display: flex;
+  flex-direction: column;
+  color: #cc8696;
+  align-items: center;
+}
+
+.pinDate {
+  font-size: medium;
+  width: 250px;
+  padding: 10px;
+}
+
+.pinRating {
+  font-size: medium;
+  width: 250px;
+  padding: 10px;
+}
+
+.pinNotes {
+  font-size: medium;
+  height: 150px;
+  width: 250px;
+  overflow-y: scroll;
+  padding: 10px;
+}
+
+.SubmitButton {
+  height: 30px;
+  margin: 10px;
+  width: 100px;
+  border-radius: 10px;
+  border: none;
+  align-self: center;
+  background-color: lightgrey;
+  color: whitesmoke;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.SubmitButton:hover {
+  background-color: #cc8696;
+}
