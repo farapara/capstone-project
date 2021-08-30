@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
-//import AddForm from "../components/AddForm";
+import axios from "axios";
 
 export default function Map() {
   const [pins, setPins] = useState({ pins: [] });
@@ -63,7 +63,7 @@ export default function Map() {
       long,
     });
   };
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // eslint-disable-next-line
     const newPlace = {
@@ -74,6 +74,14 @@ export default function Map() {
       lat: newPin.lat,
       long: newPin.long,
     };
+    try {
+      // eslint-disable-next-line
+      const res = await axios.post("/api/pins.json", newPlace);
+      setPins([...pins, res.data]);
+      setNewPin(null);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
