@@ -1,6 +1,6 @@
 .PinCard {
   width: 250px;
-  height: 200px;
+
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,20 +9,20 @@
 .PinCardLabel {
   width: max-content;
   color: pink;
-  font-size: 15px;
+  font-size: 1 rem;
   border-bottom: 1px solid pink;
-  margin: 3px 0;
+  margin: 0.188 0;
 }
 
 .PinCardDesc {
   display: flex;
-  align-items: right;
+
   font-size: 14px;
 }
 
 .PinStar {
   display: flex;
-  align-items: right;
+
   color: gold;
 }
 .Form {
