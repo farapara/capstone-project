@@ -9,16 +9,23 @@ import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
-import axios from "axios";
 
 export default function Map() {
   const [pins, setPins] = useState({ pins: [] });
   const [currentPlaceId, setCurrentPlaceId] = useState();
   const [newPin, setNewPin] = useState();
-  const [location, setLocation] = useState();
-  const [date, setDate] = useState();
-  const [rating, setRating] = useState(0);
-  const [notes, setNotes] = useState();
+  const [mapData, setMapData] = useState({
+    date: "",
+    rating: "",
+    location: "",
+    notes: "",
+  });
+  const localStorageData = {
+    date: localStorage.getItem("date"),
+    location: localStorage.getItem("location"),
+    rating: localStorage.getItem("rating"),
+    notes: localStorage.getItem("notes"),
+  };
 
   const [viewport, setViewport] = useState({
     latitude: 42.123,
@@ -65,23 +72,19 @@ export default function Map() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // eslint-disable-next-line
-    const newPlace = {
-      location,
-      date,
-      rating,
-      notes,
-      lat: newPin.lat,
-      long: newPin.long,
-    };
-    try {
-      // eslint-disable-next-line
-      const res = await axios.post("/api/pins.json", newPlace);
-      setPins([...pins, res.data]);
-      setNewPin(null);
-    } catch (err) {
-      console.log(err);
-    }
+    localStorage.setItem("date", mapData.date);
+    localStorage.setItem("location", mapData.location);
+    localStorage.setItem("rating", mapData.rating);
+    localStorage.setItem("notes", mapData.notes);
+  };
+
+  const handleChange = (e) => {
+    const { value, name } = e.target;
+
+    setMapData({
+      ...mapData,
+      [name]: value,
+    });
   };
 
   return (
@@ -155,9 +158,9 @@ export default function Map() {
               <form className="Form" onSubmit={handleSubmit}>
                 <label>Where?</label>
                 <input
-                  onChange={(event) => setLocation(event.target.value)}
+                  onChange={handleChange}
                   className="pinLocation"
-                  name="pinLocation"
+                  name="location"
                   id="pinLocation"
                   type="text"
                   required
@@ -165,9 +168,9 @@ export default function Map() {
 
                 <label>When?</label>
                 <input
-                  onChange={(event) => setDate(event.target.value)}
+                  onChange={handleChange}
                   className="pinDate"
-                  name="pinDate"
+                  name="date"
                   id="pinDate"
                   type="date"
                   required
@@ -175,7 +178,8 @@ export default function Map() {
                 <label>Rating</label>
                 <select
                   className="pinRating"
-                  onChange={(event) => setRating(event.target.value)}
+                  name="rating"
+                  onChange={handleChange}
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
@@ -185,9 +189,9 @@ export default function Map() {
                 </select>
                 <label>Notes</label>
                 <textarea
-                  onChange={(event) => setNotes(event.target.value)}
+                  onChange={handleChange}
                   className="pinNotes"
-                  name="pinNotes"
+                  name="notes"
                   id="pinNotes"
                   type="text"
                   placeholder="add notes here..."
