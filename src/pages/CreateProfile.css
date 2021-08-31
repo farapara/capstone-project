@@ -1,7 +1,57 @@
 .Heading {
   color: #cc8696;
-  margin: 2em;
+  margin: 5em;
   font-size: medium;
   align-items: center;
   letter-spacing: 4px;
+}
+
+.LoginButton {
+  background-color: teal;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.LogoutButton {
+  background-color: slateblue;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.RegisterButton {
+  background-color: palevioletred;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.SigninButtons,
+.LogoutButton {
+  position: absolute;
+  right: 10px;
+  top: 65px;
+  cursor: pointer;
+}
+
+.AppDescription {
+  letter-spacing: 6px;
+  color: lightgrey;
+  margin-top: 3rem;
+}
+
+h5 {
+  position: absolute;
+  right: 10px;
+  bottom: 70px;
+  letter-spacing: 6px;
+  color: rgb(226, 215, 215);
+  margin-top: 3rem;
 }
