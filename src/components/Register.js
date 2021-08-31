@@ -1,9 +1,9 @@
 import "./Register.css";
-import { RiBearSmileLine } from "react-icons/ri";
+import { RiBearSmileLine, RiCloseCircleFill } from "react-icons/ri";
 import { useState, useRef } from "react";
 import axios from "axios";
 
-export default function Register() {
+export default function Register({ setShowRegister }) {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState(false);
   const nameRef = useRef();
@@ -19,7 +19,7 @@ export default function Register() {
     };
     try {
       await axios.post("/users/register", newUser);
-
+      setError(false);
       setSuccess(true);
     } catch (err) {
       setError(true);
@@ -30,7 +30,7 @@ export default function Register() {
     <div className="Register">
       <div className="Logo">
         <RiBearSmileLine style={{ color: "#e8abb9" }} />
-        Going Places App
+        Going Places
       </div>
       <form onSubmit={handleSubmitRegister}>
         <input type="text" placeholder="username" ref={nameRef} />
@@ -45,6 +45,10 @@ export default function Register() {
           {error && <span className="Wrong">Something went wrong!</span>}
         </div>
       </form>
+      <RiCloseCircleFill
+        className="RegisterCancel"
+        onClick={() => setShowRegister(false)}
+      />
     </div>
   );
 }

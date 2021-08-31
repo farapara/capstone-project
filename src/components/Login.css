@@ -34,3 +34,11 @@
   color: red;
   font-size: 12px;
 }
+
+.LoginCancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #e8abb9;
+  cursor: pointer;
+}

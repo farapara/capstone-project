@@ -1,4 +1,8 @@
 .Register {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   width: 300px;
   height: 250px;
   padding: 20px;
@@ -10,17 +14,15 @@
   left: 0;
   right: 0;
   margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
 }
+
 .Logo {
   display: flex;
   align-items: center;
   color: #e8abb9;
   font-weight: 700;
 }
+
 .RegisterBtn {
   margin: 10px;
   border: none;
@@ -33,8 +35,19 @@
 .Success {
   color: green;
   font-size: 12px;
+  text-align: center;
 }
+
 .Wrong {
   color: red;
   font-size: 12px;
+  text-align: center;
+}
+
+.RegisterCancel {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  color: #e8abb9;
+  cursor: pointer;
 }

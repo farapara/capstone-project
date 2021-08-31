@@ -5,7 +5,9 @@ import Login from "../components/Login";
 
 export default function CreateProfile() {
   // eslint-disable-next-line
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState("");
+  const [showRegister, setShowRegister] = useState(true);
+  const [showLogin, setShowLogin] = useState(false);
 
   return (
     <section>
@@ -17,12 +19,19 @@ export default function CreateProfile() {
         <button className="LogoutButton">Log out</button>
       ) : (
         <div className="SigninButtons">
-          <button className="LoginButton">Login</button>
-          <button className="RegisterButton">Register</button>
+          <button className="LoginButton" onClick={() => setShowLogin(true)}>
+            Login
+          </button>
+          <button
+            className="RegisterButton"
+            onClick={() => setShowRegister(true)}
+          >
+            Register
+          </button>
         </div>
       )}
-      <Login />
-      <Register />
+      {showRegister && <Register setShowRegister={setShowRegister} />}
+      {showLogin && <Login setShowLogin={setShowLogin} />}
     </section>
   );
 }

@@ -13,7 +13,7 @@ export default function Header() {
           <h1>the map</h1>
         </Route>
         <Route path="/add">
-          <h1>the fav</h1>
+          <h1>the favs</h1>
         </Route>
       </Switch>
     </section>

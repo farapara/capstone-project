@@ -1,35 +1,34 @@
 import "./Login.css";
-import { RiBearSmileLine } from "react-icons/ri";
+import { RiBearSmileLine, RiCloseCircleFill } from "react-icons/ri";
 import { useState, useRef } from "react";
+import axios from "axios";
 
-export default function Login() {
+export default function Login({ setShowLogin, setCurrent }) {
   // eslint-disable-next-line
   const [error, setError] = useState(false);
   const nameRef = useRef();
   const passwordRef = useRef();
 
-  function handleSubmitLogin(event) {
-    event.preventDefault();
+  const handleSubmitLogin = async (e) => {
+    e.preventDefault();
+    const user = {
+      username: nameRef.current.value,
 
-    const form = event.target;
-    const username = form.username.value;
-    const password = form.password.value;
-
-    const newProfileInput = {
-      username,
-      password,
+      password: passwordRef.current.value,
     };
-
-    localStorage.setItem("newProfileInput", JSON.stringify(newProfileInput));
-
-    form.reset();
-  }
+    try {
+      await axios.post("/users/login", user);
+      setError(false);
+    } catch (err) {
+      setError(true);
+    }
+  };
 
   return (
     <div className="Login">
       <div className="Logo">
         <RiBearSmileLine style={{ color: "#e8abb9" }} />
-        Going Places App
+        Going Places
       </div>
       <form onSubmit={handleSubmitLogin}>
         <input
@@ -49,6 +48,10 @@ export default function Login() {
 
         {error && <span className="Wrong">Something went wrong!</span>}
       </form>
+      <RiCloseCircleFill
+        className="LoginCancel"
+        onClick={() => setShowLogin(false)}
+      />
     </div>
   );
 }
