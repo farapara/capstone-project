@@ -134,11 +134,7 @@ export default function Map() {
                   <p className="PinCardDesc">{p.date}</p>
                   <label className="PinCardLabel">Rating</label>
                   <div className="PinStar">
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
+                    {Array(p.rating).fill(<AiFillStar />)}
                   </div>
                   <label className="PinCardLabel">Notes</label>
                   <p className="PinCardDesc">{p.notes}</p>
