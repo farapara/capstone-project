@@ -20,6 +20,7 @@ export default function Map() {
     location: "",
     notes: "",
   });
+  // eslint-disable-next-line
   const localStorageData = {
     date: localStorage.getItem("date"),
     location: localStorage.getItem("location"),

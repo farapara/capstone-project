@@ -83,7 +83,7 @@ export default function AddProfileForm() {
         {loading ? (
           <h3>Loading...</h3>
         ) : (
-          <img src={image} alt="" style={{ width: "200px" }} />
+          <img src={image} alt="" style={{ width: "" }} />
         )}
 
         <button type="submit" className="Submit">
