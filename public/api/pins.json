@@ -2,15 +2,17 @@
   "pins": [
     {
       "id": 1,
-      "location": "Eiffel Tower",
-      "date": "14/02/2018",
+      "image": true,
+      "location": "Krakow",
+      "date": "04/02/2018",
       "rating": 5,
-      "notes": "It was an amazing place to be",
-      "lat": 48.858093,
-      "long": 2.294694
+      "notes": "COLD, but cheap beer 🍺",
+      "lat": 50.049683,
+      "long": 19.944544
     },
     {
       "id": 2,
+      "image": true,
       "location": "Berlin",
       "date": "04/10/2019",
       "rating": 5,
