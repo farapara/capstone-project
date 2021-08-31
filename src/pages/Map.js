@@ -10,6 +10,7 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
 import axios from "axios";
+import PinImage from "../components/PinImage";
 
 export default function Map() {
   const [pins, setPins] = useState({ pins: [] });
@@ -123,17 +124,17 @@ export default function Map() {
                 onClose={() => setCurrentPlaceId()}
               >
                 <div className="PinCard">
+                  <div className="PinImageContent">
+                    <PinImage p={p} />
+                  </div>
+
                   <label className="PinCardLabel">Location</label>
                   <p className="PinCardDesc">{p.location}</p>
                   <label className="PinCardLabel">Date</label>
                   <p className="PinCardDesc">{p.date}</p>
                   <label className="PinCardLabel">Rating</label>
                   <div className="PinStar">
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
-                    <AiFillStar />
+                    {Array(p.rating).fill(<AiFillStar />)}
                   </div>
                   <label className="PinCardLabel">Notes</label>
                   <p className="PinCardDesc">{p.notes}</p>

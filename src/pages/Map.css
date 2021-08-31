@@ -1,8 +1,8 @@
 .PinCard {
   width: 250px;
-
   display: flex;
   flex-direction: column;
+
   justify-content: space-around;
 }
 
@@ -67,4 +67,10 @@
 
 .SubmitButton:hover {
   background-color: #cc8696;
+}
+
+.PinImageContent {
+  position: fixed;
+  top: 10px;
+  right: 10px;
 }
