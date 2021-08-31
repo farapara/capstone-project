@@ -1,18 +1,17 @@
 import "./Footer.css";
 import { NavLink } from "react-router-dom";
 import { FiMap } from "react-icons/fi";
-import { BiLocationPlus } from "react-icons/bi";
-import { CgProfile } from "react-icons/cg";
+import { BiLocationPlus, BiHomeAlt } from "react-icons/bi";
 
 export default function Footer() {
   return (
     <nav className="Nav">
       <NavLink
         className="Navlink"
-        to="/profile"
+        to="/homepage"
         activeClassName="Navlink--active"
       >
-        <CgProfile />
+        <BiHomeAlt />
       </NavLink>
       <NavLink className="Navlink" to="/map" activeClassName="Navlink--active">
         <FiMap />
