@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./CreateProfile.css";
 import Register from "../components/Register";
+import Login from "../components/Login";
 
 export default function CreateProfile() {
   // eslint-disable-next-line
   const [currentUser, setCurrentUser] = useState(null);
+  const myStorage = window.localStorage;
   return (
     <section>
       <h2 className="Heading">the one with the map</h2>
@@ -22,6 +24,7 @@ export default function CreateProfile() {
         </div>
       )}
       <Register />
+      <Login myStorage={myStorage} />
     </section>
   );
 }

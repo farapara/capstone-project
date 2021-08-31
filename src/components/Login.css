@@ -1,0 +1,36 @@
+.Login {
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: whitesmoke;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.Logo {
+  display: flex;
+  align-items: center;
+  color: #e8abb9;
+  font-weight: 700;
+}
+.LoginBtn {
+  margin: 10px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+  background-color: steelblue;
+}
+
+.Wrong {
+  color: red;
+  font-size: 12px;
+}
