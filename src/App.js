@@ -2,10 +2,10 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateProfile from "./pages/CreateProfile";
-import Profile from "./pages/Profile";
 import Add from "./pages/Add";
 import Map from "./pages/Map";
 import { Switch, Route } from "react-router";
+import Homepage from "./pages/Homepage";
 
 function App() {
   return (
@@ -13,8 +13,8 @@ function App() {
       <Header />
       <main className="Main">
         <Switch>
-          <Route exact path="/profile">
-            <Profile />
+          <Route exact path="/homepage">
+            <Homepage />
           </Route>
           <Route path="/map">
             <Map />

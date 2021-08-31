@@ -8,7 +8,7 @@ export default function Footer() {
     <nav className="Nav">
       <NavLink
         className="Navlink"
-        to="/profile"
+        to="/homepage"
         activeClassName="Navlink--active"
       >
         <BiHomeAlt />

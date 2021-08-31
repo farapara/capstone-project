@@ -3,6 +3,7 @@ import { RiBearSmileLine } from "react-icons/ri";
 import { useState, useRef } from "react";
 
 export default function Login() {
+  // eslint-disable-next-line
   const [error, setError] = useState(false);
   const nameRef = useRef();
   const passwordRef = useRef();
