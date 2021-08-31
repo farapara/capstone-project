@@ -1,15 +1,14 @@
 import { useState } from "react";
 import "./CreateProfile.css";
+import Register from "../components/Register";
 
 export default function CreateProfile() {
+  // eslint-disable-next-line
   const [currentUser, setCurrentUser] = useState(null);
   return (
     <section>
-      <h2 className="Heading">THE ONE WITH THE MAP</h2>
-      <h4 className="AppDescription">
-        Toys are Taking Vacations and Seeing the World (Without Their Owners) -
-        just for stuffies.
-      </h4>
+      <h2 className="Heading">the one with the map</h2>
+
       <h5>
         “almost every person I spoke to knew someone who had taken a toy
         travelling.”
@@ -22,6 +21,7 @@ export default function CreateProfile() {
           <button className="RegisterButton">Register</button>
         </div>
       )}
+      <Register />
     </section>
   );
 }

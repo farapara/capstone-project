@@ -1,18 +1,19 @@
 .Heading {
   color: #cc8696;
-  margin: 5em;
+  margin: 4em;
   font-size: medium;
   align-items: center;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
 }
 
 .LoginButton {
-  background-color: teal;
+  background-color: steelblue;
   border: none;
   padding: 5px;
   border-radius: 5px;
   color: whitesmoke;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .LogoutButton {
@@ -44,13 +45,12 @@
 .AppDescription {
   letter-spacing: 6px;
   color: lightgrey;
-  margin-top: 3rem;
 }
 
 h5 {
   position: absolute;
   right: 10px;
-  bottom: 70px;
+  bottom: 80px;
   letter-spacing: 6px;
   color: rgb(226, 215, 215);
   margin-top: 3rem;
