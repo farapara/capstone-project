@@ -20,11 +20,9 @@ export default function Login() {
     };
 
     localStorage.setItem("newProfileInput", JSON.stringify(newProfileInput));
+
     form.reset();
   }
-
-  const newProfileInput =
-    JSON.parse(localStorage.getItem("newProfileInput")) || [];
 
   return (
     <div className="Login">

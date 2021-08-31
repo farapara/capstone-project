@@ -1,35 +1,14 @@
 import "./ProfileCard.css";
 
 export default function ProfileCard() {
-  const newProfileInput =
-    JSON.parse(localStorage.getItem("newProfileInput")) || [];
-
-  function capitalizeName(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  }
-  function renderProfile() {
-    return (
-      <section className="ProfileCard">
-        <div className="ProfilePictureWrapper">
-          <image
-            className="ProfilePicture"
-            src={newProfileInput.userPicture}
-            alt=""
-          />
-        </div>
-        <h2 className="ProfileHeading">
-          Welcome {capitalizeName(newProfileInput.userName)}{" "}
-        </h2>
-
-        <div className="ProfileCardInput">
-          <p>{newProfileInput.userBio}</p>
-        </div>
-
-        <div>
-          <h4>start your journey!</h4>
-        </div>
-      </section>
-    );
-  }
-  return <div>{renderProfile()} </div>;
+  return (
+    <section className="ProfileCard">
+      <h2>Hello there little perfect thing</h2>
+      <h4>
+        “almost every person I spoke to knew someone who had taken a toy
+        travelling.”
+      </h4>
+      <h5>start your journey!</h5>
+    </section>
+  );
 }

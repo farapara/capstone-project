@@ -7,13 +7,13 @@ export default function Header() {
       <Switch>
         <Route exact path="/"></Route>
         <Route path="/profile">
-          <h1>profile</h1>
+          <h1>the app</h1>
         </Route>
         <Route path="/map">
-          <h1>map</h1>
+          <h1>the map</h1>
         </Route>
         <Route path="/add">
-          <h1>pins</h1>
+          <h1>the fav</h1>
         </Route>
       </Switch>
     </section>

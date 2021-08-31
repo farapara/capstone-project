@@ -6,33 +6,26 @@
   margin: 1em;
 }
 
-.ProfilePictureWrapper {
-  background-color: whitesmoke;
+h2 {
+  display: flex;
+  letter-spacing: 6px;
+  color: #f7b9c7;
+  margin-top: 3rem;
+  font-weight: 700;
 }
 
-.ProfileHeading {
+h4 {
   display: flex;
-  background-color: whitesmoke;
-  padding: 25px;
-  color: thistle;
-  border-radius: 15px;
-  letter-spacing: 4px;
-}
-
-.ProfileCardInput {
-  display: flex;
-
-  margin-top: 2em;
-  background-color: thistle;
-  padding: 25px;
-  color: white;
-  border-radius: 40px;
-}
-
-.h4 {
-  display: flex;
-  align-items: right;
   letter-spacing: 6px;
   color: lightgrey;
+  margin-top: 3rem;
+}
+
+h5 {
+  position: absolute;
+  right: 10px;
+  bottom: 80px;
+  letter-spacing: 6px;
+  color: #f7b9c7;
   margin-top: 3rem;
 }

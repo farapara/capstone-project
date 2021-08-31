@@ -6,15 +6,13 @@ import Login from "../components/Login";
 export default function CreateProfile() {
   // eslint-disable-next-line
   const [currentUser, setCurrentUser] = useState(null);
-  const myStorage = window.localStorage;
+
   return (
     <section>
-      <h2 className="Heading">the one with the map</h2>
-
-      <h5>
-        “almost every person I spoke to knew someone who had taken a toy
-        travelling.”
-      </h5>
+      <h3>
+        Toys are Taking Vacations and Seeing the World (Without Their Owners) -
+        just for stuffies.
+      </h3>
       {currentUser ? (
         <button className="LogoutButton">Log out</button>
       ) : (
@@ -23,8 +21,8 @@ export default function CreateProfile() {
           <button className="RegisterButton">Register</button>
         </div>
       )}
+      <Login />
       <Register />
-      <Login myStorage={myStorage} />
     </section>
   );
 }
