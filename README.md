@@ -2,7 +2,7 @@
 
 ## Welcome to my Capstone Project 👩🏼‍💻
 
-Hello there, this is my Capstone Project for the neue fische Web Development Bootcamp. My app is called "Going Places" and is a travel social media app, where toys are talking vacations and seeing the world 🌎 and post their memories!
+Hello there, this is my Capstone Project for the neue fische Web Development Bootcamp. My app is called "Going Places" and is a travel social media app, where toys are taking vacations and seeing the world 🌎 and post their memories!
 
 ---
 
