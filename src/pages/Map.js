@@ -24,7 +24,7 @@ export default function Map() {
   const [coordinates, setCoordinates] = useState();
   const [location, setLocation] = useState();
   const [date, setDate] = useState();
-  const [rating, setRating] = useState(0);
+  const [rating, setRating] = useState(1);
   const [notes, setNotes] = useState();
   const [imageUrl, setImageUrl] = useState("");
   // eslint-disable-next-line
