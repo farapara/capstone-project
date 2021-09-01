@@ -28,6 +28,13 @@
   flex-direction: column;
   color: #cc8696;
   align-items: center;
+  justify-content: center;
+}
+
+.pinLocation {
+  font-size: medium;
+  width: 250px;
+  padding: 5px;
 }
 
 .pinDate {
@@ -75,4 +82,13 @@
 
 .pinPicture {
   padding: 5px;
+}
+
+.Upload {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
 }

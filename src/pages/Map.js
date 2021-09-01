@@ -27,6 +27,7 @@ export default function Map() {
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState();
   const [imageUrl, setImageUrl] = useState("");
+  // eslint-disable-next-line
   const [isImageLoading, setIsImageLoading] = useState(false);
 
   const [viewport, setViewport] = useState({
@@ -150,7 +151,7 @@ export default function Map() {
                 latitude={pin.lat}
                 closeButton={true}
                 closeOnClick={false}
-                anchor="left"
+                anchor="bottom"
                 onClose={() => setCurrentPlaceId()}
               >
                 <div className="PinCard">
@@ -191,8 +192,8 @@ export default function Map() {
                   name="pinLocation"
                   id="pinLocation"
                   type="text"
+                  placeholder="title"
                 />
-
                 <label>When?</label>
                 <input
                   onChange={(event) => setDate(event.target.value)}
@@ -231,10 +232,12 @@ export default function Map() {
                   type="file"
                   accept="image/png, image/jpeg"
                 />
+
                 {isImageLoading ? (
                   <p>Loading...</p>
                 ) : (
                   <img
+                    className="hidden"
                     src={imageUrl}
                     alt=""
                     style={{
