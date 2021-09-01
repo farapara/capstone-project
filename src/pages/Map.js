@@ -9,41 +9,24 @@ import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { AiFillStar } from "react-icons/ai";
-import axios from "axios";
 import PinImage from "../components/PinImage";
+import { uuid } from "uuidv4";
 
 export default function Map() {
-  const [loading, setLoading] = useState(false);
-  const [image, setImage] = useState("");
-
-  const uploadImage = async (e) => {
-    const files = e.target.files;
-    const data = new FormData();
-    data.append("file", files[0]);
-    data.append("upload_preset", "vma7udud");
-    setLoading(true);
-
-    const res = await fetch(
-      " https://api.cloudinary.com/v1_1/dpwb98vu5/image/upload",
-      {
-        method: "POST",
-        body: data,
-      }
-    );
-
-    const file = await res.json();
-    console.log(file);
-
-    setImage(file.secure_url);
-    setLoading(false);
-  };
-  const [pins, setPins] = useState({ pins: [] });
+  // This is for existing pins
+  const [pins, setPins] = useState(() => {
+    const pinsLS = JSON.parse(localStorage.getItem("pins")) || [];
+    return pinsLS;
+  });
   const [currentPlaceId, setCurrentPlaceId] = useState();
-  const [newPin, setNewPin] = useState();
+  // For the create form
+  const [coordinates, setCoordinates] = useState();
   const [location, setLocation] = useState();
   const [date, setDate] = useState();
   const [rating, setRating] = useState(0);
   const [notes, setNotes] = useState();
+  const [imageUrl, setImageUrl] = useState("");
+  const [isImageLoading, setIsImageLoading] = useState(false);
 
   const [viewport, setViewport] = useState({
     latitude: 42.123,
@@ -65,48 +48,58 @@ export default function Map() {
   };
 
   useEffect(() => {
-    const url = "/api/pins.json";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setPins(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+    localStorage.setItem("pins", JSON.stringify(pins));
+  }, [pins]);
 
   const handleMarkerClick = (id, lat, long) => {
     setCurrentPlaceId(id);
-    setViewport({ ...viewport, latitude: lat, longitude: long });
+    //setViewport({ ...viewport, latitude: lat, longitude: long });
   };
 
   const handleAddClick = (event) => {
     const [long, lat] = event.lngLat;
-    setNewPin({
+    setCoordinates({
       lat,
       long,
     });
   };
+
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "vma7udud");
+    setIsImageLoading(true);
+
+    const res = await fetch(
+      " https://api.cloudinary.com/v1_1/dpwb98vu5/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+
+    setImageUrl(file.secure_url);
+    setIsImageLoading(false);
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // eslint-disable-next-line
-    const newPlace = {
+
+    const newMemory = {
+      id: uuid(),
       location,
       date,
       rating,
       notes,
-      lat: newPin.lat,
-      long: newPin.long,
+      lat: coordinates.lat,
+      long: coordinates.long,
+      imageUrl,
     };
-    try {
-      // eslint-disable-next-line
-      const res = await axios.post("/api/pins.json", newPlace);
-      setPins([...pins, res.data]);
-      setNewPin(null);
-    } catch (err) {
-      console.log(err);
-    }
+
+    setPins([...pins, newMemory]);
   };
 
   return (
@@ -118,14 +111,15 @@ export default function Map() {
         onViewportChange={(viewport) => {
           setViewport(viewport);
         }}
+        doubleClickZoom={false}
         onDblClick={handleAddClick}
         transitionDuration="150"
       >
-        {pins.pins.map((p) => (
+        {pins.map((pin) => (
           <>
             <Marker
-              longitude={p.long}
-              latitude={p.lat}
+              longitude={pin.long}
+              latitude={pin.lat}
               offsetLeft={-20}
               offsetTop={-10}
             >
@@ -135,13 +129,13 @@ export default function Map() {
                   color: "#e8abb9",
                   cursor: "pointer",
                 }}
-                onClick={() => handleMarkerClick(p.id, p.lat, p.long)}
+                onClick={() => handleMarkerClick(pin.id, pin.lat, pin.long)}
               />
             </Marker>
-            {p.id === currentPlaceId && (
+            {pin.id === currentPlaceId && (
               <Popup
-                longitude={p.long}
-                latitude={p.lat}
+                longitude={pin.long}
+                latitude={pin.lat}
                 closeButton={true}
                 closeOnClick={false}
                 anchor="left"
@@ -149,32 +143,32 @@ export default function Map() {
               >
                 <div className="PinCard">
                   <div className="PinImageContent">
-                    <PinImage p={p} />
+                    <PinImage src={pin.imageUrl} alt={pin.location} />
                   </div>
 
                   <label className="PinCardLabel">Location</label>
-                  <p className="PinCardDesc">{p.location}</p>
+                  <p className="PinCardDesc">{pin.location}</p>
                   <label className="PinCardLabel">Date</label>
-                  <p className="PinCardDesc">{p.date}</p>
+                  <p className="PinCardDesc">{pin.date}</p>
                   <label className="PinCardLabel">Rating</label>
                   <div className="PinStar">
-                    {Array(p.rating).fill(<AiFillStar />)}
+                    {Array(pin.rating).fill(<AiFillStar />)}
                   </div>
                   <label className="PinCardLabel">Notes</label>
-                  <p className="PinCardDesc">{p.notes}</p>
+                  <p className="PinCardDesc">{pin.notes}</p>
                 </div>
               </Popup>
             )}
           </>
         ))}
-        {newPin && (
+        {coordinates && (
           <Popup
-            longitude={newPin.long}
-            latitude={newPin.lat}
+            longitude={coordinates.long}
+            latitude={coordinates.lat}
             closeButton={true}
             closeOnClick={false}
             anchor="left"
-            onClose={() => setNewPin()}
+            onClose={() => setCoordinates()}
           >
             <div>
               <form className="Form" onSubmit={handleSubmit}>
@@ -228,11 +222,11 @@ export default function Map() {
                   type="file"
                   accept="image/png, image/jpeg"
                 />
-                {loading ? (
+                {isImageLoading ? (
                   <p>Loading...</p>
                 ) : (
                   <img
-                    src={image}
+                    src={imageUrl}
                     alt=""
                     style={{ height: "13vh", width: "13vh" }}
                   />

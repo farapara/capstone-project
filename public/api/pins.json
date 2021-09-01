@@ -1,44 +1,42 @@
-{
-  "pins": [
-    {
-      "id": 1,
-      "image": true,
-      "location": "Krakow",
-      "date": "04/02/2018",
-      "rating": 5,
-      "notes": "COLD, but cheap beer 🍺",
-      "lat": 50.049683,
-      "long": 19.944544
-    },
-    {
-      "id": 2,
-      "image": true,
-      "location": "Thessaloniki",
-      "date": "01/12/2019",
-      "rating": 5,
-      "notes": "This is my favority city in the whole world! Feeling mybearself here.",
-      "lat": 40.629269,
-      "long": 22.947412
-    },
-    {
-      "id": 3,
-      "image": true,
-      "location": "Vienna",
-      "date": "22/10/2018",
-      "rating": 5,
-      "notes": "So many museums in this city! And MORE fans, they always ask for a picture 😎",
-      "lat": 48.210033,
-      "long": 16.363449
-    },
-    {
-      "id": 4,
-      "image": true,
-      "location": "Munich",
-      "date": "01.01.2020",
-      "rating": 4,
-      "notes": "Home for the last two years. Me like it, still haven't bought my Lederhosen though.",
-      "lat": 48.137154,
-      "long": 11.576124
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "location": "Krakow",
+    "date": "04/02/2018",
+    "rating": 5,
+    "notes": "COLD, but cheap beer 🍺",
+    "lat": 50.049683,
+    "long": 19.944544,
+    "imageUrl": "/images/pins/1.jpg"
+  },
+  {
+    "id": 2,
+    "location": "Thessaloniki",
+    "date": "01/12/2019",
+    "rating": 5,
+    "notes": "This is my favority city in the whole world! Feeling mybearself here.",
+    "lat": 40.629269,
+    "long": 22.947412,
+    "imageUrl": "/images/pins/2.jpg"
+  },
+  {
+    "id": 3,
+    "location": "Vienna",
+    "date": "22/10/2018",
+    "rating": 5,
+    "notes": "So many museums in this city! And MORE fans, they always ask for a picture 😎",
+    "lat": 48.210033,
+    "long": 16.363449,
+    "imageUrl": "/images/pins/3.jpg"
+  },
+  {
+    "id": 4,
+    "location": "Munich",
+    "date": "01.01.2020",
+    "rating": 4,
+    "notes": "Home for the last two years. Me like it, still haven't bought my Lederhosen though.",
+    "lat": 48.137154,
+    "long": 11.576124,
+    "imageUrl": "/images/pins/4.jpg"
+  }
+]
