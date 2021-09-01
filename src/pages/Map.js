@@ -13,6 +13,30 @@ import axios from "axios";
 import PinImage from "../components/PinImage";
 
 export default function Map() {
+  const [loading, setLoading] = useState(false);
+  const [image, setImage] = useState("");
+
+  const uploadImage = async (e) => {
+    const files = e.target.files;
+    const data = new FormData();
+    data.append("file", files[0]);
+    data.append("upload_preset", "vma7udud");
+    setLoading(true);
+
+    const res = await fetch(
+      " https://api.cloudinary.com/v1_1/dpwb98vu5/image/upload",
+      {
+        method: "POST",
+        body: data,
+      }
+    );
+
+    const file = await res.json();
+    console.log(file);
+
+    setImage(file.secure_url);
+    setLoading(false);
+  };
   const [pins, setPins] = useState({ pins: [] });
   const [currentPlaceId, setCurrentPlaceId] = useState();
   const [newPin, setNewPin] = useState();
@@ -197,12 +221,22 @@ export default function Map() {
                 />
                 <label className="Upload" htmlFor="upload"></label>
                 <input
+                  onChange={uploadImage}
                   className="pinPicture"
                   name="pinPicture"
                   id="pinPicture"
                   type="file"
                   accept="image/png, image/jpeg"
                 />
+                {loading ? (
+                  <p>Loading...</p>
+                ) : (
+                  <img
+                    src={image}
+                    alt=""
+                    style={{ height: "13vh", width: "13vh" }}
+                  />
+                )}
 
                 <button type="submit" className="SubmitButton">
                   add pin
