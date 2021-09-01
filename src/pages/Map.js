@@ -237,7 +237,11 @@ export default function Map() {
                   <img
                     src={imageUrl}
                     alt=""
-                    style={{ height: "13vh", width: "13vh" }}
+                    style={{
+                      height: "13vh",
+                      width: "13vh",
+                      "border-radius": "50%",
+                    }}
                   />
                 )}
 
