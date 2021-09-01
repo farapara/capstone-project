@@ -1,7 +1,5 @@
 import "./PinImage.css";
 
-export default function PinImage({ p }) {
-  return (
-    <img src={`/images/pins/${p.id}.jpg`} alt={p.name} className="PinImage" />
-  );
+export default function PinImage({ src, alt }) {
+  return <img src={src} alt={alt} className="PinImage" />;
 }

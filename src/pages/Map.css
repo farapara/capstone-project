@@ -2,7 +2,6 @@
   width: 250px;
   display: flex;
   flex-direction: column;
-
   justify-content: space-around;
 }
 
@@ -16,37 +15,43 @@
 
 .PinCardDesc {
   display: flex;
-
   font-size: 14px;
 }
 
 .PinStar {
   display: flex;
-
   color: gold;
 }
+
 .Form {
   display: flex;
   flex-direction: column;
   color: #cc8696;
   align-items: center;
+  justify-content: center;
+}
+
+.pinLocation {
+  font-size: medium;
+  width: 250px;
+  padding: 5px;
 }
 
 .pinDate {
   font-size: medium;
   width: 250px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .pinRating {
   font-size: medium;
   width: 250px;
-  padding: 10px;
+  padding: 5px;
 }
 
 .pinNotes {
   font-size: medium;
-  height: 150px;
+  height: 100px;
   width: 250px;
   overflow-y: scroll;
   padding: 10px;
@@ -59,18 +64,31 @@
   border-radius: 10px;
   border: none;
   align-self: center;
-  background-color: lightgrey;
+  background-color: #cc8696;
   color: whitesmoke;
   font-size: 1em;
   cursor: pointer;
 }
 
 .SubmitButton:hover {
-  background-color: #cc8696;
+  background-color: lightgrey;
 }
 
 .PinImageContent {
   position: fixed;
   top: 10px;
   right: 15px;
+}
+
+.pinPicture {
+  padding: 5px;
+}
+
+.Upload {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
 }
