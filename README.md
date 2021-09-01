@@ -1,4 +1,4 @@
-### **COING PLACES APP**
+### **GOING PLACES APP**
 
 ## Welcome to my Capstone Project 👩🏼‍💻
 
@@ -36,4 +36,4 @@ You can _now_ save your pins and upload pictures instantly by using the map and 
 
 ## Random notes 🌈
 
-I've been given 4 weeks to apply all the stuff I have learnt during the previous 8 weeks of the Bootcamp. My App is definetely not perfect, but it's cute and after all it's my very first project to build from scratch and I love it for all the things that it taught me!
+I've been given 4 weeks to apply all the stuff I have learnt during the previous 8 weeks of the Bootcamp. My App is definetely not perfect, but it's fun and after all it's my very first project to build from scratch,**SO** I love it for all the things that I learnt while building it!

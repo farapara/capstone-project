@@ -16,6 +16,7 @@ export default function Map() {
   // This is for existing pins
   const [pins, setPins] = useState(() => {
     const pinsLS = JSON.parse(localStorage.getItem("pins")) || [];
+
     return pinsLS;
   });
   const [currentPlaceId, setCurrentPlaceId] = useState();
@@ -46,6 +47,17 @@ export default function Map() {
     right: 10,
     top: 10,
   };
+  useEffect(() => {
+    const url = "/api/pins.json";
+    fetch(url)
+      .then((res) => res.json())
+      .then((data) => {
+        setPins(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
 
   useEffect(() => {
     localStorage.setItem("pins", JSON.stringify(pins));
@@ -53,7 +65,7 @@ export default function Map() {
 
   const handleMarkerClick = (id, lat, long) => {
     setCurrentPlaceId(id);
-    //setViewport({ ...viewport, latitude: lat, longitude: long });
+    setViewport({ ...viewport, latitude: lat, longitude: long });
   };
 
   const handleAddClick = (event) => {
@@ -179,7 +191,6 @@ export default function Map() {
                   name="pinLocation"
                   id="pinLocation"
                   type="text"
-                  required
                 />
 
                 <label>When?</label>
@@ -189,7 +200,6 @@ export default function Map() {
                   name="pinDate"
                   id="pinDate"
                   type="date"
-                  required
                 />
                 <label>Rating</label>
                 <select
@@ -211,7 +221,6 @@ export default function Map() {
                   type="text"
                   placeholder="add notes here..."
                   maxlenght="200"
-                  required
                 />
                 <label className="Upload" htmlFor="upload"></label>
                 <input
