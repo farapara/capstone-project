@@ -29,7 +29,7 @@ export default function Map() {
   const [imageUrl, setImageUrl] = useState("");
   // eslint-disable-next-line
   const [isImageLoading, setIsImageLoading] = useState(false);
-
+  console.log(pins);
   const [viewport, setViewport] = useState({
     latitude: 42.123,
     longitude: 10.123,
@@ -205,7 +205,7 @@ export default function Map() {
                 <label>Rating</label>
                 <select
                   className="pinRating"
-                  onChange={(event) => setRating(event.target.value)}
+                  onChange={(event) => setRating(Number(event.target.value))}
                 >
                   <option value="1">1</option>
                   <option value="2">2</option>
