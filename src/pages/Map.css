@@ -92,3 +92,9 @@
 .hidden {
   display: none;
 }
+
+.PinCardOptionsButtons {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

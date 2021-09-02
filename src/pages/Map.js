@@ -8,8 +8,10 @@ import ReactMapGl, {
 import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { AiFillStar } from "react-icons/ai";
+import { MdFavoriteBorder } from "react-icons/md";
+import { AiOutlineEdit, AiFillStar, AiOutlineDelete } from "react-icons/ai";
 import PinImage from "../components/PinImage";
+
 import { uuid } from "uuidv4";
 
 export default function Map() {
@@ -29,7 +31,7 @@ export default function Map() {
   const [imageUrl, setImageUrl] = useState("");
   // eslint-disable-next-line
   const [isImageLoading, setIsImageLoading] = useState(false);
-  console.log(pins);
+
   const [viewport, setViewport] = useState({
     latitude: 42.123,
     longitude: 10.123,
@@ -169,6 +171,17 @@ export default function Map() {
                   </div>
                   <label className="PinCardLabel">Notes</label>
                   <p className="PinCardDesc">{pin.notes}</p>
+                  <div className="PinCardOptionsButtons">
+                    <button className="DeleteOtionButton">
+                      <AiOutlineDelete style={{ color: "#cc8696" }} />
+                    </button>
+                    <button clas>
+                      <AiOutlineEdit style={{ color: "#cc8696" }} />
+                    </button>
+                    <button>
+                      <MdFavoriteBorder style={{ color: "#cc8696" }} />
+                    </button>
+                  </div>
                 </div>
               </Popup>
             )}
