@@ -48,17 +48,17 @@ export default function Map() {
     right: 10,
     top: 10,
   };
-  useEffect(() => {
-    const url = "/api/pins.json";
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setPins(data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   const url = "/api/pins.json";
+  //   fetch(url)
+  //     .then((res) => res.json())
+  //     .then((data) => {
+  //       setPins(data);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   useEffect(() => {
     localStorage.setItem("pins", JSON.stringify(pins));
