@@ -27,4 +27,4 @@ You can _now_ save your pins and upload pictures instantly by using the map and 
 ## Random notes 🌈
 
 I've been given 4 weeks to apply all the stuff I have learnt during the previous 8 weeks 
-of the Bootcamp. After all my App is pink, has a map, lots of pins and it's my very first project to build from scratch! It's been fun. It's been fun but now I am done!🥁🥲🎓
+of the Bootcamp. After all my App is pink, has a map, lots of pins and it's my very first project to build from scratch! It's been fun but now I am done 🥁🥲🎓
