@@ -199,7 +199,7 @@ export default function Map() {
             onClose={() => setCoordinates()}
           >
             <div>
-              <form className="Form" onSubmit={handleSubmit}>
+              <form autocomplete="off" className="Form" onSubmit={handleSubmit}>
                 <label>Where?</label>
                 <input
                   onChange={(event) => setLocation(event.target.value)}

@@ -22,7 +22,7 @@ h4 {
 }
 
 h5 {
-  position: absolute;
+  position: fixed;
   right: 10px;
   bottom: 80px;
   letter-spacing: 6px;
