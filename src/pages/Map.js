@@ -8,20 +8,19 @@ import ReactMapGl, {
 import { useEffect, useState } from "react";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
-import { MdFavoriteBorder } from "react-icons/md";
-import { AiOutlineEdit, AiFillStar, AiOutlineDelete } from "react-icons/ai";
+//import { MdFavoriteBorder } from "react-icons/md";
+import { AiFillStar } from "react-icons/ai";
 import PinImage from "../components/PinImage";
-
 import { uuid } from "uuidv4";
 
 export default function Map() {
   // This is for existing pins
   const [pins, setPins] = useState(() => {
     const pinsLS = JSON.parse(localStorage.getItem("pins")) || [];
-
     return pinsLS;
   });
   const [currentPlaceId, setCurrentPlaceId] = useState();
+
   // For the create form
   const [coordinates, setCoordinates] = useState();
   const [location, setLocation] = useState();
@@ -156,7 +155,7 @@ export default function Map() {
                 anchor="bottom"
                 onClose={() => setCurrentPlaceId()}
               >
-                <div className="PinCard">
+                <div className="PinCard" key={pin.id}>
                   <div className="PinImageContent">
                     <PinImage src={pin.imageUrl} alt={pin.location} />
                   </div>
@@ -171,8 +170,11 @@ export default function Map() {
                   </div>
                   <label className="PinCardLabel">Notes</label>
                   <p className="PinCardDesc">{pin.notes}</p>
-                  <div className="PinCardOptionsButtons">
-                    <button className="DeleteOtionButton">
+                  {/* <div className="PinCardOptionsButtons">
+                    <button
+                      onClick={() => remove.Marker(pin.id)}
+                      className="DeleteOptionButton"
+                    >
                       <AiOutlineDelete style={{ color: "#cc8696" }} />
                     </button>
                     <button clas>
@@ -181,7 +183,7 @@ export default function Map() {
                     <button>
                       <MdFavoriteBorder style={{ color: "#cc8696" }} />
                     </button>
-                  </div>
+                  </div> */}
                 </div>
               </Popup>
             )}
