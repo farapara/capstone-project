@@ -22,7 +22,7 @@ was inspiring and fun.
 
 ## Solution ⚡️
 
-You can _now_ save your pins and upload pictures instantly by using the map and you can display them and keep track of all the photos and places your toy has ever been too!
+You can _now_ save your pins and upload pictures instantly by using the map and you can display them and keep track of all the photos and places your toy has ever been to!
 
 ## Random notes 🌈
 
