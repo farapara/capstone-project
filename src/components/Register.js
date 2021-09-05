@@ -32,7 +32,7 @@ export default function Register({ setShowRegister }) {
         <RiBearSmileLine style={{ color: "#e8abb9" }} />
         Going Places
       </div>
-      <form onSubmit={handleSubmitRegister}>
+      <form autocomplete="off" onSubmit={handleSubmitRegister}>
         <input type="text" placeholder="username" ref={nameRef} />
         <input type="email" placeholder="email" ref={emailRef} />
         <input type="password" placeholder="password" ref={passwordRef} />
