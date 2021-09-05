@@ -46,7 +46,7 @@ export default function Login({ setShowLogin, setCurrent }) {
         <button className="LoginBtn">Login</button>
         <br />
 
-        {error && <span className="Wrong">Something went wrong!</span>}
+    
       </form>
       <RiCloseCircleFill
         className="LoginCancel"
