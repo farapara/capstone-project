@@ -30,7 +30,7 @@ export default function Login({ setShowLogin, setCurrent }) {
         <RiBearSmileLine style={{ color: "#e8abb9" }} />
         Going Places
       </div>
-      <form onSubmit={handleSubmitLogin}>
+      <form autocomplete="off" onSubmit={handleSubmitLogin}>
         <input
           name="username"
           type="text"
