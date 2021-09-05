@@ -42,7 +42,7 @@ export default function Register({ setShowRegister }) {
             <span className="Success">Successfull. You can login now!</span>
           )}
           <br />
-          {error && <span className="Wrong">Something went wrong!</span>}
+          {error && <span className="Wrong">Successfull. You can login now!</span>}
         </div>
       </form>
       <RiCloseCircleFill
