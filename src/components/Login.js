@@ -43,6 +43,7 @@ export default function Login({ setShowLogin, setCurrent }) {
           placeholder="password"
           ref={passwordRef}
         />
+        <br />
         <button className="LoginBtn">Login</button>
         <br />
           
